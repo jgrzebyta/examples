@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+        
+    </ui:style>
+    <g:HTMLPanel>
+        
+        <h2>Compute MD5sum</h2>
+        
+        <div>
+            <input type="text" ui:field="message" />
+            <g:Button ui:field="button">Check</g:Button>
+        </div>
+        
+        <label ui:field="response"></label>
+        
+    </g:HTMLPanel>
+</ui:UiBinder>
