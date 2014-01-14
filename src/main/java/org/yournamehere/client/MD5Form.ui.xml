@@ -13,7 +13,7 @@
             <g:Button ui:field="button">Check</g:Button>
         </div>
         
-        <label ui:field="response"></label>
+        <label id="response"></label>
         
     </g:HTMLPanel>
 </ui:UiBinder>
