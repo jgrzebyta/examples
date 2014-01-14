@@ -20,11 +20,11 @@ import org.yournamehere.client.MD5CheckingService;
  */
 public class MD5CheckingServiceImpl extends RemoteServiceServlet implements MD5CheckingService {
     
-    private static final Logger log = Logger.getLogger(MD5CheckingServiceImpl.class.getName());
+    private Logger log = Logger.getLogger(getClass().getName());
 
     @Override
     public String computeMD5(String message) {
-        log.fine("compute MD5 for message: " + message);
+        log.info(String.format("compute MD5 for message: '%s'", message));
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] out = md.digest(message.getBytes(Charset.forName("UTF-8")));
