@@ -12,7 +12,6 @@
         <servlet-name>MD5CheckingService</servlet-name>
         <url-pattern>/org.yournamehere.Main/md5sum</url-pattern>
     </servlet-mapping>
-    
     <!-- remote logging -->
     <servlet>
         <servlet-name>remoteLogging</servlet-name>
