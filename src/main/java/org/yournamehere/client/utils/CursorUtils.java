@@ -1,7 +1,7 @@
 package org.yournamehere.client.utils;
 
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.Style;
 
 /**
  *
@@ -9,10 +9,10 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class CursorUtils {
      public static void cursorWait() {
-         DOM.setStyleAttribute(RootPanel.getBodyElement(), "cursor", "wait");
+         Document.get().getBody().getStyle().setCursor(Style.Cursor.WAIT);
      }
      
-     public static void sursorNormal() {
-         DOM.setStyleAttribute(RootPanel.getBodyElement(), "cursor", "default");
+     public static void cursorNormal() {
+         Document.get().getBody().getStyle().setCursor(Style.Cursor.DEFAULT);
      }
 }

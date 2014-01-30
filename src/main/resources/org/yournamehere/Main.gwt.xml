@@ -4,6 +4,7 @@
 
 <module>
     <inherits name="com.google.gwt.user.User"/>
+    <inherits name="com.google.common.base.Base"/>
 
     <!-- Inherit the default GWT style sheet. You can change -->
     <!-- the theme of your GWT application by uncommenting -->
@@ -13,9 +14,11 @@
     <!-- <inherits name="com.google.gwt.user.theme.dark.Dark"/> -->
     
     <inherits name="com.google.gwt.user.theme.clean.Clean"/>
-    <inherits name="org.yournamehere.Logging" />
-
+    <!--<inherits name="org.yournamehere.Logging" />-->
+    
+    
     <entry-point class="org.yournamehere.client.MainEntryPoint"/>
 
     <!-- Do not define servlets here, use web.xml -->
+    <source path="client"/>
 </module>

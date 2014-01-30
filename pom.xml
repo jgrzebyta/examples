@@ -17,7 +17,8 @@
             downloading sources
         -->
         <downloadSources>true</downloadSources>
-
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--
             Produce detailed JS during GWT compilation for development
             environment
@@ -34,27 +35,22 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
-
+        <!--
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>15.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava-gwt</artifactId>
+            <version>15.0</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <version>2.1</version>
             <scope>provided</scope>
-        </dependency>
-
-
-        <!--
-                <dependency>
-                    <groupId>com.google.appengine</groupId>
-                    <artifactId>appengine-local-runtime</artifactId>
-                    <version>${gae.version}</version>
-                    <scope>test</scope>
-                </dependency>
-        -->
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-codeserver</artifactId>
-            <version>${gwt.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
@@ -66,12 +62,14 @@
             <artifactId>gwt-servlet</artifactId>
             <version>${gwt.version}</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-dev</artifactId>
             <version>${gwt.version}</version>
             <scope>test</scope>
         </dependency>
+        -->
         
         <dependency>
             <groupId>com.google.appengine</groupId>
@@ -98,9 +96,13 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        
     </dependencies>
         
     <build>
+        
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -156,24 +158,9 @@
                 <configuration>
                     <debugPort>8001</debugPort>
                     <style>${gwt.style}</style>
+                    <hostedWebapp>${webappDirectory}</hostedWebapp>
+                    <runTarget>welcomeGWT.html</runTarget>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-user</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-dev</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.google.gwt</groupId>
-                        <artifactId>gwt-codeserver</artifactId>
-                        <version>${gwt.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             
             <plugin>

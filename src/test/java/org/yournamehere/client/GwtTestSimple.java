@@ -8,26 +8,25 @@ package org.yournamehere.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.ui.RootPanel;
-import java.util.logging.Logger;
 
 /**
  *
  * @author temp_jacek
  */
 public class GwtTestSimple extends GWTTestCase {
-    
-    private Logger log = Logger.getLogger(getClass().getName());
 
     @Override
     public String getModuleName() {
-        return "org.yournamehere.Main";
+        return "org.yournamehere.test.MainJUnit";
     }
     
-    public void testSimple() throws Exception {
-        log.info("some simple test");
+    public void testObject() {
+        assertNotNull(new Object());
+    }
+    
+    public void testRootPanel(){
+        RootPanel panel  = RootPanel.get();
         
-        RootPanel root = RootPanel.get();
-        log.info("root : " + root);
-        assertNotNull(root);
+        assertNotNull("panel is null", panel);
     }
 }

@@ -10,6 +10,7 @@ import com.google.gwt.dom.client.Document;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import java.util.logging.Logger;
+import org.yournamehere.client.utils.CursorUtils;
 
 /**
  *
@@ -26,6 +27,7 @@ public class MD5Callback implements AsyncCallback<String>{
 
     @Override
     public void onSuccess(String result) {
+        CursorUtils.cursorNormal();
         log.fine("success");
         Document.get().getElementById("response").setInnerText(result);
     }

@@ -13,7 +13,10 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
+import java.util.Map;
+import org.yournamehere.client.utils.CursorUtils;
 
 /**
  *
@@ -38,8 +41,13 @@ public class MD5Form extends Composite {
         return message.getValue();
     }
     
+    public void setMessage(String message) {
+        this.message.setValue(message);
+    }
+    
     @UiHandler("button")
     public void handleClick(ClickEvent evt) {
+        CursorUtils.cursorWait();
         MD5CheckingServiceAsync service = GWT.create(MD5CheckingService.class);
         service.computeMD5(getMessage(), new MD5Callback());
     }
