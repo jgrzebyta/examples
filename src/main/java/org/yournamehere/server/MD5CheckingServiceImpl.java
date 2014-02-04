@@ -26,6 +26,10 @@ public class MD5CheckingServiceImpl extends RemoteServiceServlet implements MD5C
     @Override
     public String computeMD5(String message) {
         log.info(String.format("compute MD5 for message: '%s'", message));
+        log.fine("fine message");
+        log.finer("finer message");
+        log.finest("finest message");
+        
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] out = md.digest(message.getBytes(Charset.forName("UTF-8")));
