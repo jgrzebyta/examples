@@ -7,10 +7,10 @@
         
         <h2>Compute MD5sum</h2>
         
-        <div>
-            <input type="text" ui:field="message" />
-            <g:Button ui:field="button">Check</g:Button>
-        </div>
+        <g:FlowPanel debugId="panel">
+            <g:TextBox ui:field="messageBox" debugId="messageBox"/>
+            <g:Button ui:field="button" debugId="button">Check</g:Button>
+        </g:FlowPanel>
         
         <label id="response"></label>
         

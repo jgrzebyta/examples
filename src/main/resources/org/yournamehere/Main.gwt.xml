@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
 
 <module>
     <inherits name="com.google.gwt.user.User"/>
     <inherits name="com.google.common.base.Base"/>
     <inherits name="org.yournamehere.Logging" />
-
-
+    <inherits name="com.google.gwt.debug.Debug"/>
+    
+    
+    <define-property name="dev.mode" values="debug,prod"/>
+    <set-property name="compiler.emulatedStack" value="false"/>
+    <set-property name="gwt.enableDebugId" value="false" />
+    
+    <set-property name="compiler.emulatedStack" value="true" >
+        <when-property-is name="dev.mode" value="debug" />  
+    </set-property> 
+    <set-property name="gwt.enableDebugId" value="true" >
+        <when-property-is name="dev.mode" value="debug"/>
+    </set-property>
+    
+    <set-property name="gwt.logging.enabled" value="FALSE">
+        <when-property-is name="dev.mode" value="prod"/>
+    </set-property>
+    
+    <!--<set-property name="dev.mode" value="debug"/>-->
+    ${dev.mode}
+    
     <!-- Inherit the default GWT style sheet. You can change -->
     <!-- the theme of your GWT application by uncommenting -->
     <!-- any one of the following lines. -->

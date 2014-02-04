@@ -11,6 +11,7 @@
         <gwa.version>1.8.9</gwa.version>
         <gwt.version>2.6.0-rc3</gwt.version>
         <runTarget>welcomeGWT.html</runTarget>
+        <dev.mode> </dev.mode>
 
         <!--
             This is just for "eclipse:eclipse" goal to always attempt
@@ -102,7 +103,6 @@
     <build>
         
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-        
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -185,51 +185,56 @@
     </build>
 
     <profiles>
-        <!--
-            We can configure our integration server to activate this
-            profile and perform gae:deploy, thus uploading latest
-            snapshot to the
-            http://1.latest.<applicationName>.appspot.com automatically
-        -->
         <profile>
-            <id>integration-build</id>
+            <id>debug-profile</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <dev.mode>
+                    <![CDATA[<set-property name="dev.mode" value="debug"/>]]>
+                </dev.mode>
+            </properties>
+            
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <includes>
+                            <include>**/*.xml</include>
+                        </includes>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+                <defaultGoal>process-resources</defaultGoal>
+            </build>
+            
+        </profile>
+        <profile>
+            <id>production-profile</id>
             <properties>
                 <gae.application.version>1</gae.application.version>
 
                 <!-- Produce pretty JS during GWT compilation for test environment -->
-                <gwt.style>PRETTY</gwt.style>
-            </properties>
-        </profile>
-
-        <!--
-            This profile will activate automatically during release and
-            upload application to the
-            http://2.latest.<applicationName>.appspot.com (We might want
-            to set the 2nd version as our applications Default version
-            to be accessible at http://<applicationName>.appspot.com)
-        -->
-        <profile>
-            <id>release-build</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
-
-            <properties>
-                <!--
-                    During release, set application version in
-                    appengine-web.xml to 2
-                -->
-                <gae.application.version>2</gae.application.version>
-
-                <!--
-                    Produce compressed JS during GWT compilation for
-                    production environment
-                -->
                 <gwt.style>OBFUSCATED</gwt.style>
+                <dev.mode>
+                    <![CDATA[<set-property name="dev.mode" value="prod"/>]]>
+                </dev.mode>
             </properties>
+            
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                        <includes>
+                            <include>**/*.xml</include>
+                        </includes>
+                    </resource>
+                </resources>
+                <defaultGoal>process-resources</defaultGoal>
+            </build>
+            
         </profile>
     </profiles>
 
