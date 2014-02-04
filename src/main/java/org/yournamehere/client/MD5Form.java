@@ -7,7 +7,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import java.util.logging.Logger;
@@ -35,12 +34,11 @@ public class MD5Form extends Composite {
     }
     
     public String getMessage() {
-        //return message.getValue();
-        return "";
+        return messageBox.getText();
     }
     
     public void setMessage(String message) {
-        //this.message.setValue(message);
+        this.messageBox.setText(message);
     }
     
     @UiHandler("button")
