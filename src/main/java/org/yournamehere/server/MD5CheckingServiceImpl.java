@@ -20,13 +20,13 @@ import org.yournamehere.client.MD5CheckingService;
  * @author temp_jacek
  */
 public class MD5CheckingServiceImpl extends RemoteServiceServlet implements MD5CheckingService {
+    private static final long serialVersionUID = -3422873731573926749L;
 
     private Logger log = Logger.getLogger(getClass().getName());
 
     @Override
     public String computeMD5(String message) {
         log.info(String.format("compute MD5 for message: '%s'", message));
-        log.severe("severe message");
         
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
