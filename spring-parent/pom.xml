@@ -19,6 +19,7 @@
         <spring-security.version>4.0.1.RELEASE</spring-security.version>
         <aspectj.version>1.8.5</aspectj.version>
         <cglib.version>3.1</cglib.version>
+        <derby.version>10.10.2.0</derby.version>
     </properties>
     
     <dependencyManagement>
@@ -51,6 +52,13 @@
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
                 <version>${cglib.version}</version>
+            </dependency>
+            
+            <!-- derby db dependencies -->
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derbyclient</artifactId>
+                <version>${derby.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
