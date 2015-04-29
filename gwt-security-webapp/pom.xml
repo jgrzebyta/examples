@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.github.jgrzebyta</groupId>
+        <artifactId>gwt-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../gwt-parent/</relativePath>
+    </parent>
+    
+    
+    <groupId>com.github.jgrzebyta</groupId>
+    <artifactId>gwt-security-webapp</artifactId>
+    <packaging>pom</packaging>
+    
+    <properties>
+        <runTarget>welcomeGWT.html</runTarget>
+    </properties>
+    <name>GWT security webapp</name>
+    <url>http://maven.apache.org/</url>
+    
+    <modules>
+        <module>server-side</module>
+        <module>client-side</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>debug-profile</id>
+        </profile>
+        <profile>
+            <id>production-profile</id>
+        </profile>
+    </profiles>
+</project>
+
