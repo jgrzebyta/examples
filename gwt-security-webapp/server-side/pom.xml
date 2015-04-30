@@ -114,6 +114,12 @@
             <scope>test</scope>
         </dependency>
         
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
         <!-- derby db -->
         <dependency>
             <groupId>org.apache.derby</groupId>

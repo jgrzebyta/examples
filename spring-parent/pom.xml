@@ -20,6 +20,7 @@
         <aspectj.version>1.8.5</aspectj.version>
         <cglib.version>3.1</cglib.version>
         <derby.version>10.10.2.0</derby.version>
+        <guava.version>18.0</guava.version>
     </properties>
     
     <dependencyManagement>
@@ -52,6 +53,12 @@
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
                 <version>${cglib.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
             
             <!-- derby db dependencies -->

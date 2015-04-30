@@ -31,7 +31,6 @@
             environment
         -->
         <gwt.style>DETAILED</gwt.style>
-        
         <guava.version>18.0</guava.version>
     </properties>
     <name>GWT-webapp</name>
