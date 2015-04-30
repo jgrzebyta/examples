@@ -10,8 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.yournamehere.SecurityConfiguration;
-import org.yournamehere.security.db.GenerateHash;
-import org.yournamehere.security.db.SimpleDAO;
+import org.yournamehere.server.db.GenerateHash;
+import org.yournamehere.server.db.SimpleDAO;
 import org.yournamehere.shared.schema.LocalUser;
 
 /**
