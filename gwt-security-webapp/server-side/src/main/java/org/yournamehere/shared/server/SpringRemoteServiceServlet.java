@@ -1,4 +1,4 @@
-package org.yournamehere.server.web;
+package org.yournamehere.shared.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import javax.servlet.ServletConfig;
@@ -64,16 +64,21 @@ public class SpringRemoteServiceServlet extends RemoteServiceServlet {
         return null;
     }
 
+    /**
+     * Create/delete cookie. If token is {@code null} than cookie is deleted.
+     * 
+     * @param token 
+     */
     public void setToken(String token) {
-        Cookie c;
-        // if token is null than create cookie to delete the stored one
-        if (token == null) {
-            c = new Cookie(TOKEN_NAME, token);
-        } else {
-            // token age by default is 1 year. However it really depends on the database value.
-            c = new Cookie(TOKEN_NAME, token);
+        Cookie c = new Cookie(TOKEN_NAME, token);
+        
+        // set up cookie max age for 1 year. If value is null than 0
+        if (token != null) {
             c.setMaxAge(YEAR_IN_SEC);
+        } else {
+            c.setMaxAge(0);
         }
+        
         this.getThreadLocalResponse().addCookie(c);
     }
 
