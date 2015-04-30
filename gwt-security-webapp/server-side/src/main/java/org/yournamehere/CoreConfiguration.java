@@ -11,13 +11,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 /**
- * Default configuration class
+ * Define database connection and dao.
  *
  * @author Jacek Grzebyta
  */
 @Configuration
 @PropertySource("classpath:db.properties")
-@ComponentScan({"org.yournamehere.security.db"})
+@ComponentScan({"org.yournamehere.server.db"})
 public class CoreConfiguration {
     
     @Autowired

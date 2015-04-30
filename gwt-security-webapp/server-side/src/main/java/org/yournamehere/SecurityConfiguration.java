@@ -20,16 +20,16 @@ import org.springframework.security.config.annotation.method.configuration.Globa
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.yournamehere.security.db.SimpleDAO;
+import org.yournamehere.server.db.SimpleDAO;
 
 /**
- * Default configuration class
+ * Define security resources & scan service beans for Spring-security annotations.
  *
  * @author Jacek Grzebyta
  */
 @Configuration
 @Import(CoreConfiguration.class)
-@ComponentScan({"org.yournamehere.server"})
+@ComponentScan({"org.yournamehere.security.server"})
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SecurityConfiguration extends GlobalMethodSecurityConfiguration {
     
