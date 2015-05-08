@@ -13,33 +13,7 @@ import org.springframework.security.crypto.codec.Hex;
  *
  * @author Jacek Grzebyta
  */
-public class GenerateHash {
-    private static final String SALT = "4593240890620586765971411905971437903624710618968522063610863765183";
-    
-    public static final String hashPasswd(String password) {
-        IMessageDigest h = HashFactory.getInstance(Registry.TIGER_HASH);
-        
-
-        h.update(SALT.getBytes(),0,SALT.length());
-        byte[] passwordBytes;
-        try{
-            passwordBytes = password.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            passwordBytes = password.getBytes();
-        }
-        
-        h.update(passwordBytes,0,passwordBytes.length);
-        byte[] inter = h.digest();
-        
-        for (int i=0; i<1500; i++) {
-            h.reset();
-            h.update(inter,0, inter.length);
-            inter = h.digest();
-        }
-        
-       return new String(Hex.encode(inter));
-    }
-    
+public class GenerateHash {    
     /**
      * 
      * @param salt
