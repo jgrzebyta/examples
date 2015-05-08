@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
@@ -38,9 +39,12 @@ public class LoadUsers {
         String user= "user";
         String password = "password";
         
+        BCryptPasswordEncoder hashEncoder = new BCryptPasswordEncoder();
+        
         for (int i=1; i<=5; i++) {
+            String pswd = password + Integer.toString(i);
             
-            String passwordHash = GenerateHash.hashPasswd(password + Integer.toString(i));
+            String passwordHash = hashEncoder.encode(pswd);
             
             LocalUser u = LocalUser.getInstance(
                     GenerateHash.getRandomHash(user,password), 
