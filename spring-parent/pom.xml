@@ -35,13 +35,19 @@
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-config</artifactId>
-                <version>4.0.1.RELEASE</version>
+                <version>${spring-security.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-web</artifactId>
-                <version>4.0.1.RELEASE</version>
+                <version>${spring-security.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-crypto</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            
             
             <!-- AOP approach -->
             <dependency>
@@ -108,12 +114,12 @@
                         <dependency>
                             <groupId>org.aspectj</groupId>
                             <artifactId>aspectjrt</artifactId>
-                            <version>${aspect.version}</version>
+                            <version>${aspectj.version}</version>
                         </dependency>
                         <dependency>
                             <groupId>org.aspectj</groupId>
                             <artifactId>aspectjtools</artifactId>
-                            <version>${aspect.version}</version>
+                            <version>${aspectj.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
