@@ -2,7 +2,6 @@ package org.yournamehere;
 
 import java.util.ArrayList;
 import javax.annotation.Resource;
-import javax.sql.DataSource;
 import org.apache.derby.tools.dblook;
 import org.junit.Test;
 import org.junit.runner.RunWith;

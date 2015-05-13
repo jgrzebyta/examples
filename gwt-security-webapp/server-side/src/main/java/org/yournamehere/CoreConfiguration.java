@@ -17,7 +17,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
  */
 @Configuration
 @PropertySource("classpath:db.properties")
-@ComponentScan({"org.yournamehere.server.db"})
+@ComponentScan({"org.yournamehere.server.utils"})
 public class CoreConfiguration {
     
     @Autowired

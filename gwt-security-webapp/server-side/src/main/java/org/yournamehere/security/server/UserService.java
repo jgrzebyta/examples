@@ -20,7 +20,7 @@ public interface UserService extends RemoteService {
      * @return tokenId
      * @throws WrongCredentialsException 
      */
-    public String login(String username, String password, String useragent) throws WrongCredentialsException;
+    public String login(final String username, final String password, final String useragent) throws WrongCredentialsException;
     
     /**
      * User authentication based on ticket Id.

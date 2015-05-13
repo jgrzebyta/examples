@@ -1,9 +1,8 @@
-package org.yournamehere.server.db;
+package org.yournamehere.server.utils;
 
 import gnu.crypto.Registry;
 import gnu.crypto.hash.HashFactory;
 import gnu.crypto.hash.IMessageDigest;
-import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 import java.util.Date;
 import java.util.Random;

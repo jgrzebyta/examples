@@ -1,4 +1,4 @@
-package org.yournamehere.server.db;
+package org.yournamehere.server.utils;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -14,7 +14,7 @@ public class GrantedAuthoritiesUtils {
     @SuppressWarnings("serial")
     public static Collection<GrantedAuthority> getAuthorities() {
         return new HashSet<GrantedAuthority>(){{
-            add(new SimpleGrantedAuthority("USER"));
+            add(new SimpleGrantedAuthority("ROLE_USER"));
         }};
     }
 }

@@ -12,6 +12,12 @@
         </Logger>
         -->
         
+        <Logger name="org.springframework.security.authentication" level="info"/>
+        
+        <Logger name="org.yournamehere" level="trace"/>
+        
+        <Logger name="org.springframework.security" level="info"/>
+        
         <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>
